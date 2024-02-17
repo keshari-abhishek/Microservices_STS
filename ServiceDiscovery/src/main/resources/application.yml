@@ -1,0 +1,14 @@
+#HTTP (Tomcat) port
+server:
+  port: 8761
+
+#Configure this Discovery Server
+eureka:
+  instance:
+    hostname: localhost
+  client: #Not a Client
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+     #defalutZone: http://localhost:8761/eureka
